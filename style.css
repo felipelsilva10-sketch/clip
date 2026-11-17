@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -8,9 +7,14 @@
 }
 
 body {
-    background: #fff;
+    background-color: #fff;
     color: #4c545d;
+    background-image: url('img/mobile/Bitmap 2 (1).png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
+
 
 .geral {
     width: 100%;
@@ -23,7 +27,7 @@ body {
     padding: 60px 24px;
 }
 
-.cta > img {
+.cta img {
     width: 125px;
 }
 
@@ -33,6 +37,7 @@ body {
 
 .cta p, .baixar p, .descricao, .descricao-lugar {
     max-width: 650px;
+    margin-inline: auto;
     color: #9fabb2;
 }
 
@@ -74,14 +79,9 @@ body {
 }
 
 .qualquer-lugar h2,
-.qualquer-lugar p,
-.beneficios h2,
-.beneficios > p {
-    width: 100%;
+.beneficios h2 {
     max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    margin-inline: auto;
 }
 
 .descricao-lugar {
@@ -96,13 +96,18 @@ body {
     margin-top: 50px;
 }
 
-.conteudo picture,
-.conteudo picture img {
+
+.conteudo picture {
+    display: block;
     width: 100%;
 }
 
 .conteudo picture img {
+    display: block;
+    width: 100%;
     max-width: 500px;
+    height: auto;
+    margin-inline: auto;
 }
 
 .informacoes {
@@ -126,8 +131,11 @@ body {
 }
 
 .imagem-lugar img {
+    display: block;
     width: 100%;
     max-width: 700px;
+    height: auto;
+    margin-inline: auto;
 }
 
 .lista-beneficios {
@@ -194,6 +202,7 @@ body {
     width: 24px;
     height: 24px;
 }
+
 
 
 
@@ -272,6 +281,7 @@ body {
 
 
 
+
 @media screen and (min-width: 769px) and (max-width: 1439px) {
     .cta, .baixar {
         padding: 60px 40px;
@@ -288,21 +298,11 @@ body {
     }
 
     .conteudo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         gap: 70px;
         margin-top: 50px;
     }
 
-    .conteudo picture img {
-        width: 100%;
-        max-width: 500px;
-    }
-
     .informacoes {
-        display: flex;
-        flex-direction: column;
         align-items: center;
         gap: 55px;
         width: 100%;
@@ -328,9 +328,15 @@ body {
     }
 
     .rodape-links ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 350px;
         text-align: left;
+    }
+
+    .rodape-links li {
+        width: 45%;
     }
 
     .rodape-links a {
@@ -338,7 +344,8 @@ body {
     }
 }
 
-/* DESKTOP */
+
+
 
 @media screen and (min-width: 1440px) {
     .cta {
@@ -360,10 +367,24 @@ body {
     }
 
     .conteudo {
-        display: grid;
-        grid-template-columns: 58% 1fr;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        gap: 80px;
+    }
+
+    /* Imagem à esquerda (58%) e textos à direita (35%) */
+    .conteudo picture {
+        width: 58%;
+    }
+
+    .informacoes {
+        width: 35%;
+    }
+
+    /* No desktop a imagem ocupa toda a coluna, sem o limite de 500px */
+    .conteudo picture img {
+        max-width: 100%;
+        margin-inline: 0;
     }
 
     .informacoes h3, .informacoes p {
@@ -390,9 +411,15 @@ body {
     }
 
     .rodape-links ul {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 600px;
         text-align: left;
+    }
+
+    .rodape-links li {
+        width: 30%;
     }
 
     .rodape-links a {
