@@ -372,7 +372,7 @@ body {
         align-items: center;
     }
 
-    /* Imagem à esquerda (58%) e textos à direita (35%) */
+    
     .conteudo picture {
         width: 58%;
     }
@@ -381,7 +381,7 @@ body {
         width: 35%;
     }
 
-    /* No desktop a imagem ocupa toda a coluna, sem o limite de 500px */
+ 
     .conteudo picture img {
         max-width: 100%;
         margin-inline: 0;
